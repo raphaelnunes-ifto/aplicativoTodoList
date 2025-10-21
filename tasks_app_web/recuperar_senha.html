@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang='pt-BR'>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasks App - Recuperar Senha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--bg:#f8f9fa;--card:#ffffff;--muted:#94a3b8;--dark:#343a40;--accent:#6b7280;}
+    body{background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--dark);min-height:100vh;}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+    .btn-primary{background:var(--dark);color:white;padding:.5rem .9rem;border-radius:8px;}
+    .muted{color:var(--muted);font-size:.85rem}
+    .web-center{max-width:900px;margin:0 auto;padding:1rem;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
+    
+    @media (max-width: 768px) {
+      .web-center {padding: 0.75rem;}
+    }
+    
+    @media (max-width: 480px) {
+      .web-center {padding: 0.5rem;}
+      .card {padding: 1rem;}
+    }
+  </style>
+</head>
+<body>
+<div class="web-center card">
+  <div class="text-center text-xl font-bold mb-4">RECUPERAR SENHA</div>
+  <div class="max-w-md mx-auto">
+    <div class="card p-4">
+      <p class="muted mb-4">Digite seu e-mail para receber instruções de recuperação de senha.</p>
+      <form class="space-y-3">
+        <input type="email" placeholder="Seu e-mail" class="w-full p-3 border rounded" required />
+        <button type="submit" class="btn-primary w-full">Enviar Instruções</button>
+      </form>
+      <div class="text-center mt-4">
+        <a href="login.html" class="text-blue-600 text-sm">← Voltar para o login</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

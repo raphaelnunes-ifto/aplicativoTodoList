@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang='pt-BR'>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasks App - Percentual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--bg:#f8f9fa;--card:#ffffff;--muted:#94a3b8;--dark:#343a40;--accent:#6b7280;}
+    body{background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--dark);min-height:100vh;}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+    input,textarea,select{border:1px solid #cfd8df;padding:.6rem .75rem;border-radius:8px;background:transparent;color:var(--dark);width:100%;}
+    .btn-primary{background:var(--dark);color:white;padding:.5rem .9rem;border-radius:8px;}
+    .btn-secondary{background:#dee2e6;color:var(--dark);padding:.45rem .8rem;border-radius:8px;}
+    .muted{color:var(--muted);font-size:.85rem}
+    .transition-smooth{transition:all .18s ease-in-out}
+    .input-with-icon{display:flex;align-items:center;gap:.6rem;border-radius:8px;padding:.2rem .4rem;border:1px solid #e6eef3;}
+    .input-with-icon input{border:none;outline:none;flex:1;padding:.55rem .25rem;background:transparent}
+    .web-center{max-width:900px;margin:0 auto;padding:1rem;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
+    
+    @media (max-width: 768px) {
+      .web-center {padding: 0.75rem;justify-content: flex-start;padding-top: 1rem;}
+      .chart-container {position: relative;height: 300px;width: 100%;}
+      .text-2xl {font-size: 1.5rem;}
+    }
+    
+    @media (max-width: 480px) {
+      .web-center {padding: 0.5rem;}
+      .text-2xl {font-size: 1.35rem;}
+      .chart-container {height: 250px;}
+      .card {padding: 1rem;}
+    }
+  </style>
+</head>
+<body class='page-percentual'>
+<div class="web-center card">
+  <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+    <div class="flex items-center gap-2">
+      <a href="tarefas.html" class="btn-secondary text-sm">← Voltar</a>
+      <div class="h-8 w-8 rounded-full bg-gray-300 flex-shrink-0"></div>
+      <div class="ml-2 js-username truncate">Name</div>
+    </div>
+    <div class="flex gap-2">
+      <button class="muted js-logout text-sm">Sair</button>
+    </div>
+  </div>
+  <div class="text-2xl font-bold text-center mb-4">PERCENTUAL</div>
+  <div class="w-full mx-auto mt-2 card p-4">
+    <p class="muted text-center md:text-left">Percentual de Tarefas Concluídas/Pendentes</p>
+    <div class="chart-container my-4">
+      <canvas id="pieChart"></canvas>
+    </div>
+    <hr class="my-4"/>
+    <p class="muted mt-4 text-center md:text-left">Destaque Semanal e Mensal</p>
+    <div class="chart-container my-4">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+</div>
+<script src='main.js'></script>
+</body>
+</html>

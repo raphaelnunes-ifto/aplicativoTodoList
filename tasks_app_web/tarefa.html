@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang='pt-BR'>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasks App - Editar Tarefa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--bg:#f8f9fa;--card:#ffffff;--muted:#94a3b8;--dark:#343a40;--accent:#6b7280;}
+    body{background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--dark);min-height:100vh;}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+    input,textarea,select{border:1px solid #cfd8df;padding:.6rem .75rem;border-radius:8px;background:transparent;color:var(--dark);width:100%;}
+    .btn-primary{background:var(--dark);color:white;padding:.5rem .9rem;border-radius:8px;}
+    .btn-secondary{background:#dee2e6;color:var(--dark);padding:.45rem .8rem;border-radius:8px;}
+    .muted{color:var(--muted);font-size:.85rem}
+    .transition-smooth{transition:all .18s ease-in-out}
+    .web-center{max-width:900px;margin:0 auto;padding:1rem;min-height:100vh;}
+    
+    @media (max-width: 768px) {
+      .web-center {padding: 0.75rem;}
+      .text-2xl {font-size: 1.5rem;}
+    }
+    
+    @media (max-width: 480px) {
+      .web-center {padding: 0.5rem;}
+      .text-2xl {font-size: 1.35rem;}
+      .card {padding: 1rem;}
+      .btn-primary, .btn-secondary {padding: 0.6rem 1rem;font-size: 0.9rem;}
+      .flex.gap-2 {flex-direction: column;}
+      .flex.items-center.gap-2 {flex-wrap: wrap;}
+    }
+  </style>
+</head>
+<body class=''>
+<div class="web-center card">
+  <div class="text-2xl font-bold text-center mb-4">EDITAR TAREFA</div>
+  <div class="w-full mx-auto mt-2 card p-4">
+    <form id="form-edit-task" class="space-y-3">
+      <div class="flex items-center gap-2 flex-wrap"><input type="checkbox" class="js-toggle-completed h-4 w-4 flex-shrink-0" /> <span class="text-sm">Concluída</span> <button type="button" class="ml-auto btn-secondary js-delete-task" data-id="">Excluir</button></div>
+      <div class="text-xs muted"><span class="js-task-date"></span> <span class="js-task-time"></span></div>
+      <label class="block muted">TAREFA</label>
+      <input name="title" />
+      <div><label class="block muted">Prioridade</label><select name="priority"><option>Baixa</option><option>Média</option><option>Alta</option></select></div>
+      <div><label class="block muted">Descrição</label><textarea name="description" rows="6"></textarea></div>
+      <div class="flex gap-2"><button class="btn-primary flex-1" type="submit">Salvar</button><a href="tarefas.html" class="btn-secondary flex-1 text-center">Cancelar</a></div>
+    </form>
+  </div>
+</div>
+<script src='main.js'></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang='pt-BR'>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasks App - Nova Tarefa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--bg:#f8f9fa;--card:#ffffff;--muted:#94a3b8;--dark:#343a40;--accent:#6b7280;}
+    body{background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--dark);min-height:100vh;}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+    input,textarea,select{border:1px solid #cfd8df;padding:.6rem .75rem;border-radius:8px;background:transparent;color:var(--dark);width:100%;}
+    .btn-primary{background:var(--dark);color:white;padding:.5rem .9rem;border-radius:8px;}
+    .btn-secondary{background:#dee2e6;color:var(--dark);padding:.45rem .8rem;border-radius:8px;}
+    .muted{color:var(--muted);font-size:.85rem}
+    .transition-smooth{transition:all .18s ease-in-out}
+    .web-center{max-width:900px;margin:0 auto;padding:1rem;min-height:100vh;}
+    
+    @media (max-width: 768px) {
+      .web-center {padding: 0.75rem;}
+      .text-2xl {font-size: 1.5rem;}
+      .grid-cols-2 {grid-template-columns: 1fr;gap: 1rem;}
+    }
+    
+    @media (max-width: 480px) {
+      .web-center {padding: 0.5rem;}
+      .text-2xl {font-size: 1.35rem;}
+      .card {padding: 1rem;}
+      .btn-primary, .btn-secondary {padding: 0.6rem 1rem;font-size: 0.9rem;}
+      .flex.gap-2 {flex-direction: column;}
+    }
+  </style>
+</head>
+<body class=''>
+<div class="web-center card">
+  <div class="text-2xl font-bold text-center mb-4">NOVA TAREFA</div>
+  <div class="w-full mx-auto mt-2 card p-4">
+    <form id="form-newtask" class="space-y-3">
+      <label class="block muted">Tarefa</label>
+      <input name="title" placeholder="Nome da Tarefa" required />
+      <div class="grid grid-cols-2 gap-2">
+        <div><label class="block muted">Data</label><input name="date" type="date" /></div>
+        <div><label class="block muted">Hora</label><input name="time" type="time" /></div>
+      </div>
+      <div><label class="block muted">Prioridade</label><select name="priority"><option>Baixa</option><option>Média</option><option>Alta</option></select></div>
+      <div><label class="block muted">Descrição</label><textarea name="description" rows="5"></textarea></div>
+      <div class="flex gap-2"><button class="btn-primary flex-1" type="submit">Salvar</button><a href="tarefas.html" class="btn-secondary flex-1 text-center">Cancelar</a></div>
+    </form>
+  </div>
+</div>
+<script src='main.js'></script>
+</body>
+</html>

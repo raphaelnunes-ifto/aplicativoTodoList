@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang='pt-BR'>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasks App - Minhas Tarefas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--bg:#f8f9fa;--card:#ffffff;--muted:#94a3b8;--dark:#343a40;--accent:#6b7280;}
+    body{background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--dark);min-height:100vh;}
+    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);}
+    input,textarea,select{border:1px solid #cfd8df;padding:.6rem .75rem;border-radius:8px;background:transparent;color:var(--dark);width:100%;}
+    .btn-primary{background:var(--dark);color:white;padding:.5rem .9rem;border-radius:8px;white-space:nowrap;}
+    .btn-secondary{background:#dee2e6;color:var(--dark);padding:.45rem .8rem;border-radius:8px;}
+    .muted{color:var(--muted);font-size:.85rem}
+    .transition-smooth{transition:all .18s ease-in-out}
+    .input-with-icon{display:flex;align-items:center;gap:.6rem;border-radius:8px;padding:.2rem .4rem;border:1px solid #e6eef3;}
+    .input-with-icon input{border:none;outline:none;flex:1;padding:.55rem .25rem;background:transparent}
+    .web-center{max-width:900px;margin:0 auto;padding:1rem;min-height:100vh;}
+    
+    @media (max-width: 768px) {
+      .web-center {padding: 0.75rem;}
+      .text-2xl {font-size: 1.5rem;}
+    }
+    
+    @media (max-width: 480px) {
+      .web-center {padding: 0.5rem;}
+      .text-2xl {font-size: 1.35rem;}
+      .card {padding: 1rem;}
+      .btn-primary, .btn-secondary {padding: 0.6rem 1rem;font-size: 0.9rem;}
+    }
+  </style>
+</head>
+<body class='page-tarefas'>
+<div class="web-center card">
+  <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+    <div class="flex items-center gap-2">
+      <a href="tarefas.html" class="h-8 w-8 rounded-full bg-gray-300 flex-shrink-0 flex items-center justify-center text-white font-bold text-sm">T</a>
+      <div class="ml-2 js-username truncate">Name</div>
+    </div>
+    <div class="flex gap-2">
+      <button class="muted js-percentual text-sm">%</button>
+      <button class="muted js-logout text-sm">Sair</button>
+    </div>
+  </div>
+  <div class="text-2xl font-bold mb-2 text-center md:text-left">MINHAS TAREFAS</div>
+  <div class="w-full mx-auto mt-4">
+    <div class="flex items-center justify-between mb-3 flex-wrap gap-3">
+      <button class="btn-primary js-add-task transition-smooth flex-1 min-w-[140px]">+ Adicionar Tarefa</button>
+      <select id="filterSelect" class="border rounded px-2 py-1 flex-1 min-w-[120px]">
+        <option value="todos">Todos</option>
+        <option value="concluidas">Concluídas</option>
+        <option value="pendentes">Pendentes</option>
+      </select>
+    </div>
+    <div id="tasksContainer" class="card p-3 min-h-[220px]"></div>
+  </div>
+</div>
+<script src='main.js'></script>
+</body>
+</html>
